@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+
+<head>
+	<title>Szekelys on Earth | Contest Entry</a></title>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+		div.gallery {
+		    margin: 5px;
+		    border: 1px solid black;
+		    float: left;
+		    width: 180px;
+		}
+
+		div.gallery:hover {
+		    border: 1px solid #777;
+		}
+
+		div.gallery img {
+		    width: 100%;
+		    height: auto;
+		}
+
+		div.desc {
+		    padding: 15px;
+		    text-align: center;
+		    font-family: Georgia;
+		    color: #aaa;
+		}
+	</style>
+</head>
+
+<body >
+	<a href="/"><h3 class="title-static">Szekelys on Earth | Static Plot Gallery</h3></a>
+	<p class="intro-static">Based on the shared dataset I made some plots using Python and matplotlib. Here are the results. You can find here visuals related to the hometowns, universities, and images that intend to visualise how many poeple left their hometown and live outside their region. <br> This site is under construction. You may have a hard time loading the whole page, sorry for that, update coming soon.</p>
+
+	<div class="intro-static">
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/livesin200.png">
+		    <img src="{% static 'img/livesin200.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Top 200 Cities (where Szekelys live).</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop20.png">
+		    <img src="{% static 'img/birthtop20.png' %}" alt="Forest" width="300" height="200">
+		  </a>
+		  <div class="desc">Hometowns</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/topunies.png">
+		    <img src="{% static 'img/topunies.png' %}" alt="Forest" width="300" height="200">
+		  </a>
+		  <div class="desc">Most Popular Universities</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop0.png">
+		    <img src="{% static 'img/birthtop0.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Cristuru Secuiesc</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop1.png">
+		    <img src="{% static 'img/birthtop1.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Miercurea Ciuc</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop2.png">
+		    <img src="{% static 'img/birthtop2.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Odorheiu Secuiesc</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop3.png">
+		    <img src="{% static 'img/birthtop3.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Baraolt</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop5.png">
+		    <img src="{% static 'img/birthtop3.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Targu Secuiesc</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop8.png">
+		    <img src="{% static 'img/birthtop8.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Targu Mures</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop9.png">
+		    <img src="{% static 'img/birthtop9.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Gheorgheni</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop10.png">
+		    <img src="{% static 'img/birthtop10.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Vlahita</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop12.png">
+		    <img src="{% static 'img/birthtop12.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Cluj Napoca</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop13.png">
+		    <img src="{% static 'img/birthtop13.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Balan</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop14.png">
+		    <img src="{% static 'img/birthtop14.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Reghin</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop15.png">
+		    <img src="{% static 'img/birthtop15.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Toplita</div>
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="/static/img/birthtop16.png">
+		    <img src="{% static 'img/birthtop16.png' %}" alt="Fjords" width="300" height="200">
+		  </a>
+		  <div class="desc">Praid</div>
+		</div>
+</body>
+
+</html>

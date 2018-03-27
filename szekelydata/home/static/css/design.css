@@ -1,0 +1,99 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000000 url({% static 'img/loading.gif' %}) center center no-repeat;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  height: 100%;
+}
+
+#info {
+  font-size: 11px;
+  position: absolute;
+  bottom: 5px;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 3px;
+  right: 10px;
+  padding: 10px;
+}
+
+#currentInfo {
+  width: 350px;
+  height: 280px;
+  position: absolute;
+  left: 20px;
+  top: 63px;
+  padding-bottom: 30px;
+  background-color: rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255,255,255,0.4);
+  padding: 10px;
+}
+a {
+  color: #aaa;
+  text-decoration: none;
+}
+a:hover {
+  color: #aaa;
+}
+.bull {
+  padding: 0 5px;
+  color: #555;
+}
+#title {
+  position: absolute;
+  top: 20px;
+  width: 350px;
+  left: 20px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+  font: 20px Georgia;
+  padding: 10px;
+}
+.place {
+  font: 16px Georgia;
+  line-height: 26px;
+  height: 30px;
+  text-align: left;
+  float: left;
+  width: 200px;
+  padding-bottom: 7px;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-out;
+}
+.place:hover, .place.active {
+  color: #fff;
+}
+
+.txt {
+  font: 15px Georgia;
+  line-height: 26px;
+  height: 30px;
+  text-align: left;
+  float: left;
+  width: 300px;
+  padding-bottom: 7px;
+  color: #E2E2E2FF;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-out;
+}
+
+.zoom {
+  padding-left: 20px;
+  transition: transform .2s; /* Animation */
+  width: 120px;
+  position: fixed;
+}
+
+.zoom:hover {
+    padding-top: 150px; 
+    border-radius: 10px black;
+    transform: scale(5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

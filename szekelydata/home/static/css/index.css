@@ -1,0 +1,103 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  font-family: "Georgia";
+  color: #B5B5B5FF;
+  font-size: 13px;
+  line-height: 20px;
+  height: 100%;
+}
+
+a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.title-static {
+  text-align: left;
+  margin-left: 100px;
+  margin-top: 100px;
+  font-family: Georgia;
+}
+
+.intro-static {
+  color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-family: Georgia;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.title {
+  color: white;
+  text-align: left;
+  margin-top: 36vh;
+  font-family: "Georgia";
+}
+
+.intro {
+  text-align: left;
+  font-family: "Georgia";
+  color: white;
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.links {
+  color: #aaa;
+  text-align: left;
+  font-size: 18px;
+  font-family: "Georgia";
+}
+
+.earth { /*Not mine, credit to: https://codepen.io/zFunx/pen/dZaGJG*/
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 700px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
+}
+
+.earth:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: -20px -20px 50px 2px #000 inset;
+  border-radius: 50%;
+}
+
+.earth > div {
+  width: 200%;
+  height: 100%;
+  animation: spin 30s linear alternate infinite;
+  background: url(/static/img/earth.jpg);
+  /*orginal image at https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg */
+  background-size: cover;
+}
+
+@keyframes spin {
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  {% load staticfiles %}
+  <head>
+    <title>Szekelys on Earth</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/design.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon"/>
+  </head>
+  <body>
+
+  <div id="container"></div>
+
+  <div id="info">
+    <strong><a href="http://www.chromeexperiments.com/globe">Based on WebGL Globe</a></strong> <span class="bull">&bull;</span> Created by Tamás Imets <span class="bull">&bull;</span> Data from the <a target="_blank" href="http://csaladenes.egologo.ro/?p=1129">SzékelyData Contest Page</a>
+  </div>
+
+  <div id="currentInfo">
+    <a class="place" href="/livesin"><span id="placelivesin">Current Home</span></a>
+    <a class="place" href="/birth">Birthplaces</a>
+    <a class="place" href="/">Homepage</a>
+    <img src="{% static '/img/livesintop.png' %}" class="zoom">
+    <p class="txt">Here you can check where the Szekely people live today. The higher the colored column is, the more people live there.
+  </p>
+  </div>
+
+  <div id="title">
+    <a href="/" style="color: white">Szekelys on Earth | Interactive Globe</a>
+  </div>
+
+  <script type="text/javascript" src="{% static 'js/Detector.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/three.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/Tween.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/globe.js' %}"></script>
+  <script type="text/javascript">
+    if(!Detector.webgl){
+      Detector.addGetWebGLMessage();
+    } else {
+      var places = ['livesin'];
+      var container = document.getElementById('container');
+      var globe = new DAT.Globe(container);
+      console.log(globe);
+      var i, tweens = [];
+      
+      var settime = function(globe, t) {
+        return function() {
+          new TWEEN.Tween(globe).to({time: t/places.length},500).easing(TWEEN.Easing.Cubic.EaseOut).start();
+          var y = document.getElementById('place'+places[t]);
+          if (y.getAttribute('class') === 'place active') {
+            return;
+          }
+          var yy = document.getElementsByClassName('place');
+          for(i=0; i<yy.length; i++) {
+            yy[i].setAttribute('class','place');
+          }
+          y.setAttribute('class', 'place active');
+        };
+      };
+      
+      for(var i = 0; i<places.length; i++) {
+        var y = document.getElementById('place'+places[i]);
+        y.addEventListener('mouseover', settime(globe,i), false);
+      }
+
+      var xhr;
+      TWEEN.start();
+
+      xhr = new XMLHttpRequest();
+      xhr.open('GET', "{% static 'data/livesin.json' %}", true);
+      xhr.onreadystatechange = function(e) {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
+            window.data = data;
+            for (i=0;i<data.length;i++) {
+              globe.addData(data[i][1], {format: 'magnitude', name: data[i][0], animated: true});
+            }
+            globe.createPoints();
+            settime(globe,0)();
+            globe.animate();
+            document.body.style.backgroundImage = 'none'; // remove loading
+          }
+        }
+      };
+      xhr.send(null);
+    }
+  </script>
+
+  </body>
+
+</html>
